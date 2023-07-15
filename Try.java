@@ -14,10 +14,9 @@ public class Try{
         a.setSalary(34);
     }
     public static void main(String[] args) throws IOException{
-       Employee e = new Employee("a", 0);
-       System.out.println(e.toString());
-       Employee e2 = new Employee("a", 0);
-       System.out.println(e2.toString());
+       String s = "";
+       s = s + 'M' * 3;
+       System.out.println(s);
     }
 }
 
