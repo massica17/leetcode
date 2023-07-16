@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class Solution007 {
     public int reverse(int x) {

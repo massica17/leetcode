@@ -25,6 +25,7 @@ public class Solution015 {
                     u.add(nums[le]);
                     u.add(nums[ri]);
                     res.add(u);
+                    
                     while(le < ri && nums[le] == nums[le + 1]){
                         le ++;
                     }
