@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.time.LocalDate;
 public class Try{
+    
     public static void swap(Employee a, Employee b){
         Employee temp = a;
         a = b;
@@ -14,13 +15,12 @@ public class Try{
         a.setSalary(34);
     }
     public static void main(String[] args) throws IOException{
-       String s = "";
-       s = s + 'M' * 3;
-       System.out.println(s);
+       Comparator<String> comp = new lengthComparator();
+       if(comp.compare(null, null))
     }
 }
 
-class Employee{
+class Employee implements Comparable<Object>{
     private String name;
     private int salary;
     private static int init = 0;
@@ -44,5 +44,11 @@ class Employee{
 
     public void setName(String name){
         this.name = name;
+    }
+}
+
+class lengthComparator implements Comparator<String>{
+    public int compare(String first, String second){
+        return first.length() - second.length();
     }
 }
