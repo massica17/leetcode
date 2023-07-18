@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution977 {
     public int[] sortedSquares(int[] nums) {
         int len = nums.length;

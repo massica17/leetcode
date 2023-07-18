@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution034 {
     public int[] searchRange(int[] nums, int target) {
         int len = nums.length;

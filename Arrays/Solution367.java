@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution367 {
     public boolean isPerfectSquare(int num){
         if(num == 0 || num == 1){

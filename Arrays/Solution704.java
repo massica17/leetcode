@@ -1,5 +1,6 @@
-class Solution035 {
-    public int searchInsert(int[] nums, int target) {
+package Arrays;
+public class Solution704 {
+    public int search(int[] nums, int target) {
         int len = nums.length;
         int le = 0, ri = len - 1;
         int mid = 0;
@@ -11,15 +12,10 @@ class Solution035 {
             if(nums[mid] > target){
                 ri = mid - 1;
             }
-            else{
+            else {
                 le = mid + 1;
             }
-        }
-        if(nums[mid] > target){
-            return mid;
-        }
-        else {
-            return mid + 1;
-        }
+        }   
+        return -1;
     }
 }

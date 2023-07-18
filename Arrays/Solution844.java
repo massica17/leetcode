@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution844 {
     public boolean backspaceCompare(String s, String t) {
         int ls = s.length();

@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution027 {
     public int removeElement(int[] nums, int val) {
         int len = nums.length;

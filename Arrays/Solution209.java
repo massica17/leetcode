@@ -1,4 +1,5 @@
-public class Solution029 {
+package Arrays;
+public class Solution209 {
     public int minSubArrayLen(int target, int[] nums) {
         int temp = 0;
         int len = nums.length;
@@ -26,12 +27,5 @@ public class Solution029 {
             f++;
         }
         return find ? min : 0;
-    }
-    public static void main(String[] args) {
-        Solution029 so = new Solution029();
-        int[] nums = new int[]{1,1,1,1,1,1,1,1,1};
-        int target = 11;
-        int res = so.minSubArrayLen(target, nums);
-        System.out.println(res);
     }
 }

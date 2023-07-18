@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution069 {
     public int mySqrt(int x) {
         if(x == 0 || x == 1){
@@ -27,9 +28,5 @@ public class Solution069 {
             return mid - 1;
         }
         return mid;
-    }
-    public static void main(String[] args) {
-        Solution069 s = new Solution069();
-        int res = s.mySqrt(2147395599);
     }
 }

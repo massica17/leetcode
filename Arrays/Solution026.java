@@ -1,3 +1,4 @@
+package Arrays;
 public class Solution026 {
     public int removeDuplicates(int[] nums) {
         int len = nums.length;
