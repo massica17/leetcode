@@ -19,9 +19,9 @@ public class Try{
             return String.valueOf(chars);
     }
     public static void main(String[] args) throws IOException{
-        Map<String, Integer> m = new HashMap<>();
-        System.out.println(m.put("1", 1));
-        System.out.println(m.put("1", 1));
-        Set<Map >
+        int[] a = new int[]{0 ,1};
+        int j = 0;
+        System.out.println(a[j++]);
+        System.out.println(j);
     }
 }
