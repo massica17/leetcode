@@ -1,54 +1,27 @@
-import java.io.Console;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 import java.time.LocalDate;
 public class Try{
-    
-    public static void swap(Employee a, Employee b){
-        Employee temp = a;
-        a = b;
-        b = temp;
+
+    private int age = 0;
+
+    public class TryInter{
+        private int iage = age;
+
+        public void print(){
+            System.out.println(iage);
+        }
     }
-    public static void change(Employee a){
-        a.setName("ss");
-        a.setSalary(34);
+    public static String change(String s) {
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            return String.valueOf(chars);
     }
     public static void main(String[] args) throws IOException{
-       Comparator<String> comp = new lengthComparator();
-       if(comp.compare(null, null))
-    }
-}
-
-class Employee implements Comparable<Object>{
-    private String name;
-    private int salary;
-    private static int init = 0;
-    static 
-    {
-        init = init + 1;
-    }
-
-    Employee(String name, int salary){
-        this.name = name ;
-        this.salary = salary;
-    }
-    
-    public String toString(){
-        return name + " " + salary + " " + init;
-    }
-
-    public void setSalary(int a){
-        this.salary = a;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-}
-
-class lengthComparator implements Comparator<String>{
-    public int compare(String first, String second){
-        return first.length() - second.length();
+        Map<String, Integer> m = new HashMap<>();
+        System.out.println(m.put("1", 1));
+        System.out.println(m.put("1", 1));
+        Set<Map >
     }
 }
