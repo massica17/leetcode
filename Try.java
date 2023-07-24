@@ -19,9 +19,21 @@ public class Try{
             return String.valueOf(chars);
     }
     public static void main(String[] args) throws IOException{
-        int[] a = new int[]{0 ,1};
-        int j = 0;
-        System.out.println(a[j++]);
-        System.out.println(j);
+        List<String> staff = new ArrayList<>();
+        staff.add("aa");
+        staff.add("bb");
+        staff.add("cc");
+        staff.add("aa");
+        staff.add("aa");
+        List<String> staff2 = new ArrayList<>();
+        staff2.add("aa");
+        staff2.add("bb");
+        staff2.add("aa");
+        staff.retainAll(staff2);
+        for(int i = 0; i < staff.size(); i++){
+            System.out.println(staff.get(i));
+        }
+        String[] values = staff.toArray(new String[staff.size()]);
+
     }
 }
