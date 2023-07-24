@@ -32,7 +32,7 @@ class Solution {
             for(int i = 0; i < size - 1; i++){
                 slow = fast;
                 fast = dq.pollFirst();
-                slow.right = fast;
+                slow.next = fast;
                 if(fast.left != null){
                     dq.addLast(fast.left);
                 }
