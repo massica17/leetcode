@@ -21,25 +21,14 @@
  * }
  */
 class Solution {
-    public void merge(TreeNode node1, TreeNode node2){
-        if(node1 == null && node2 == null){
-            return;
-        }
-        if(node1 != null && node2 == null){
-            return;
-        }
-        if(node1 == null && node2 != null){
-            node1 = new TreeNode(node2.val);
-            return;
-        }
-        if(node1 != null && node2 != null){
-            node1.val = node1.val + node2.val;
-            merge(node1.left, node2.left);
-            merge(node1.right, node2.right);
-        }
-    }
+    // 递归
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        merge(root1, root2);
+        if (root1 == null) return root2;
+        if (root2 == null) return root1;
+
+        root1.val += root2.val;
+        root1.left = mergeTrees(root1.left,root2.left);
+        root1.right = mergeTrees(root1.right,root2.right);
         return root1;
     }
 }

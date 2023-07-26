@@ -19,6 +19,26 @@ public class Try{
             return String.valueOf(chars);
     }
     public static void main(String[] args) throws IOException{
-        Integer 
+        TreeNode root = new TreeNode(0);
+        root.left = null;
+        root.right = new TreeNode(1);
+        TreeNode temp = root.left;
+        temp = root.right;
+        System.out.println(temp.val);
     }
 }
+
+
+ class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+ 
