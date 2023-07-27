@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=617 lang=java
+ * @lc app=leetcode.cn id=501 lang=java
  *
- * [617] 合并二叉树
+ * [501] 二叉搜索树中的众数
  */
 
 // @lc code=start
@@ -21,16 +21,11 @@
  * }
  */
 class Solution {
-    // 递归
-    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        if (root1 == null) return root2;
-        if (root2 == null) return root1;
-
+    public int val = 0;
+    public int len = 0;
+    TreeNode pre = null;
+    public int[] findMode(TreeNode root) {
         
-        root1.val += root2.val;
-        root1.left = mergeTrees(root1.left,root2.left);
-        root1.right = mergeTrees(root1.right,root2.right);
-        return root1;
     }
 }
 // @lc code=end
