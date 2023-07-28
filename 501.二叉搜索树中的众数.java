@@ -58,19 +58,37 @@ class Solution1 {
 class Solution{
     private TreeNode pre = null;
     private int maxLen = 0;
+    private int len = 0;
     private List<Integer> res = new ArrayList<>();
-    private void traversal(TreeNode node, int len){
+    private void traversal(TreeNode node){
         if(node == null){
             return;
         }
-        if(pre != null && pre.val == node.val){
+        traversal(node.left);
+        if(pre == null){
+            len = 1;
+        }
+        else if(pre.val == node.val){
             len += 1;
         }
+        else {
+            len = 1;
+        }
+        if(len > maxLen){
+            maxLen = len;
+            res.clear();
+            res.add(node.val);
+        }
+        else if(len == maxLen){
+            res.add(node.val);
+        }
+        System.out.println(len);
         pre = node;
         traversal(node.right);
     }
     public int[] findMode(TreeNode root){
-        traversal(root, 1);
+        traversal(root);
+        return res.stream().mapToInt(x->x).toArray();
     }
 }
 
