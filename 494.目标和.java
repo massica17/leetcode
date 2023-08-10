@@ -18,19 +18,18 @@ class Solution {
         for(int i = 0; i < n; i++){
             sum += nums[i];
         }
+        if ( target < 0 && sum < -target) return 0;
         target = target + sum;
         if(target % 2 == 1 || target < 0) return 0;
         target = target / 2;
         int[] dp = new int[target + 1];
-        int count = 0;
+        dp[0] = 1;
         for(int i = 0; i < n; i++){
             for(int j = target; j >= nums[i]; j--){
-                dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]);
-                display(dp);
+                dp[j] += dp[j - nums[i]];
             }
-            if(dp[target] == target) count++;
         }
-        return count;
+        return dp[target];
     }
 }
 // @lc code=end
