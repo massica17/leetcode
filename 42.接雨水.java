@@ -12,26 +12,31 @@ import java.util.*;
 class Solution {
     public int trap(int[] height) {
         int n = height.length;
+        int slow = 0;
+        int fast = 0;
         int res = 0;
-        if(n < 2) return 0;
-        Deque<Integer> inds = new LinkedList<>();
-        int ind = 0;
-        while(ind < n && height[ind + 1] > height[ind]) ind++; //找到第一个下降点
-        inds.add(ind);
-        int cur = 0;
-        for(int i = ind + 1; i < n; i++){
-            cur = i;
-            if(height[i] < height[inds.peekLast()]){
-                inds.addLast(i);
+        while(slow + 1 < n && height[slow + 1] >= height[slow]) slow ++;
+        if(slow == n - 1) return 0;
+        while(true){
+            int find_min = slow;
+            while(find_min + 1 < n && height[find_min + 1] <= height[find_min]) find_min++;
+            if(find_min >= n) return res;
+            fast = find_min + 1;
+            while(fast + 1 < n && height[fast + 1] >= height[fast]) fast++;
+            if(fast >= n) return res;
+            int temp = Math.min(height[slow], height[fast]);
+            for(int i = slow; i <= fast; i++){
+                res += Math.max(temp - height[i], 0);
             }
-            else {
-                int now_ind = 0;
-                while(!inds.isEmpty() && height[i] > height[inds.peekLast()]){
-                    now_ind = inds.peekLast();
-                    
-                }
-            }
+            System.out.printf("slow:%d find_min:%d fast:%d%n", slow, find_min, fast);
+            slow = fast;
+            if(slow == n - 1) return res;
         }
+        
+    }
+    public static void main(String[] args) {
+        Solution so = new Solution();
+        System.out.println(so.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
     }
 }
 // @lc code=end
