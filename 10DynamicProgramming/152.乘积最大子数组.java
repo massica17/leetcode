@@ -43,10 +43,6 @@ class Solution{
         if(has_zero) return Math.max(max, 0);
         else return max;
     }
-    public static void main(String[] args) {
-        Solution so = new Solution();
-        System.out.println(so.maxProduct(new int[]{2,3,-2,4}));
-    }
 }
 // @lc code=end
 
